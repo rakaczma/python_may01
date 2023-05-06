@@ -17,6 +17,8 @@ class Enemy:
         return f"Name {self.name}. Health: {self.health}. Hit power: {self.hit_power}"
 
 
+
+
 class Troll(Enemy):
 
         def take_damage_troll(self, damage):
@@ -25,17 +27,13 @@ class Troll(Enemy):
                 self.health = 100
 
 
+    def attack(self):
+        print(f"Enemy attack with power {self.hit_power}")
+
+
 troll = Troll("Troll", 100, 100)
+troll.attack(100)
 troll.take_damage(50)
 print(troll)
 troll.take_damage(51)
 print(troll)
-#
-# troll_with_name = Troll("Troll")
-# troll_with_health = Troll("Troll", 100)
-# troll_with_power = Troll("Troll", 100, 100)
-#
-# print(troll)
-# print(troll_with_name)
-# print(troll_with_health)
-# print(troll_with_power)
