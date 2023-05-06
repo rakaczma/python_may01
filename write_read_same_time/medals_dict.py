@@ -35,6 +35,7 @@ medals_table = [
 column_names = ['athlete', 'gold', 'silver', 'bronze', 'total']
 filename = 'athlete_medal_write.csv'
 
+
 def sort_key(d: dict) -> str:
 	return d['athlete']
 
