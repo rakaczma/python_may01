@@ -19,8 +19,9 @@ with open(read_file_name, encoding='utf-8', newline='') as data, \
             if value.isnumeric():
                 value = int(value)
             new_dict[key.casefold()] = value
-        new_dict['Total'] = None
+        new_dict['total'] = None
         print(f'\t{new_dict},', file=output_file)
 
     print(']', file=output_file)
     print(file=output_file)
+
