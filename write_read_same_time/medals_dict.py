@@ -32,10 +32,16 @@ medals_table = [
 	{'athlete': 'LEWIS, Carl', 'gold': 9, 'silver': 1, 'bronze': 0, 'country': 'United States', 'total': None},
 ]
 
-column_names = ['athlete', 'gold', 'silver', 'bronze', 'country', 'total']
-
+column_names = ['athlete', 'gold', 'silver', 'bronze', 'total']
 filename = 'athlete_medal_write.csv'
+
+def sort_key(d: dict) -> str:
+	return d['athlete']
+
 with open(filename, 'w', encoding='utf-8', newline='') as output_file:
-	writer = csv.DictWriter(output_file, fieldnames=column_names, quoting=csv.QUOTE_NONNUMERIC)
+	writer = csv.DictWriter(output_file, fieldnames=column_names, quoting=csv.QUOTE_NONNUMERIC, extrasaction='ignore')
 	writer.writeheader()
-	writer.writerows(medals_table)
+	# writer.writerows(medals_table)
+	# for row in medals_table:
+	# 	writer.writerows(row)
+	writer.writerows(sorted(medals_table, key=sort_key))
